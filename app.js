@@ -1,7 +1,7 @@
 import { getUsuarios, getPost, getCommets } from "./modulos/index.js"; // Importa funciones desde el archivo de módulos
 
 const URL = "https://jsonplaceholder.typicode.com"; // URL base de la API
-const usuarioId = 3; // ID del usuario específico a consultar
+const usuarioId = 3; // ID del Usuario específico a consultar
 
 const getusuarioId = async (usuarioId) => {
   // Función asíncrona para obtener datos de un usuario específico
@@ -17,7 +17,7 @@ const manejardatos = async () => {
 
   return await Promise.all(
     usuarios.map(async (usuario) => {
-      // Mapea todos los usuarios para trabajar con ellos de forma asíncrona
+      // Mapea todos los usuarios para trabajar con ellos de forma asíncrona y retorna los usuarios
       const posts = await getPost(URL, usuario); // Obtiene los posts del usuario actual
 
       const comentPost = await Promise.all(
